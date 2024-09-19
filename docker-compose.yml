@@ -1,0 +1,13 @@
+---
+
+services:
+  port-fwd:
+    image: chrisbensch/docker-portfwd:latest
+    container_name: port-fwd
+    environment:
+      - REMOTE_HOST=x.x.x.x
+      - REMOTE_PORT=3389
+      - LOCAL_PORT=3389
+    ports:
+      - 3389:3389
+    restart: unless-stopped
